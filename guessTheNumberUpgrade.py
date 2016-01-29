@@ -1,4 +1,4 @@
-# replace the contents of this comment with your name
+# Brian Torres
 import random
 
 # -------------------------------------------------------------------
@@ -7,6 +7,12 @@ import random
 #   'topLimit' which is the top limit for the random number generator
 # the function returns the random number generated to its caller
 def generateNumber( topLimit ):
+    topLimit = random.randint(1,100)
+
+
+
+
+    
     
     # TO DO: ####################################################
     # Write code in this function that calculates and           #
@@ -44,7 +50,12 @@ def askUserToGuess( times, secretNumber ):
 #   the 'userGuess' parameter is the answer entered by the user
 #   the 'userSecretNumber' parameter is the randomly generated number
 def evaluateAnswer( userGuess, userSecretNumber ):
-    
+    if usergGuess < userSecretNumber:
+        return 'Your guess is too low'
+    elif userGuess > userSecretNumber:
+        return 'Your guess is too high'
+    else:
+        break
     # TO DO: ####################################################
     # Write code in this function that compares userGuess and   #
     # userSecretNumber. The code should:                        #
@@ -66,6 +77,14 @@ def evaluateAnswer( userGuess, userSecretNumber ):
 #       True, we'll show the right answer on the screen
 #       False, we won't show the right answer on the screen
 def playGame( showAnswer ):
+    print('Hi, let play Guess The Number, Choose any number from 1 up to a number of your choice')
+
+    print('you will have 5 guesses')
+    for totalGuesses in range (1, 6):
+        guess = int(input())
+        if guess < generateNumber:
+
+    
     
     # TO DO: ####################################################
     # Write code in this function that                          #
@@ -89,7 +108,7 @@ def playGame( showAnswer ):
     # you don't need to change anything below this comment ##############
     # ///////////////////////////////////////////////////////////////////
     # this if statement allows us to show the hidden number to the user
-    if( showAnswer == True ):
+if( showAnswer == True ):
         print('--shhh, the real number is ' + str(theNumber) + '.')
     
     #this gives a sucess/fail message if the user guessed correctly in the allotted attempts
