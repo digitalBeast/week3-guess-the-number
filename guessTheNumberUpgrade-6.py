@@ -8,7 +8,7 @@ import random
 # the function returns the random number generated to its caller
 def generateNumber( topLimit ):
     secretNumber = random.randint(1,topLimit) 
-    return secretNumber
+    return secretNumber #PROF ALFARO: Good work here!
 
 
 
@@ -57,7 +57,7 @@ def evaluateAnswer( userGuess, userSecretNumber ):
         print ('Your guess is too high')
         return False
     else: userGuess == userSecretNumber
-    return True
+        return True # PROF ALFARO: Check your indentation on this line. #BRIAN: changed
     # TO DO: ####################################################
     # Write code in this function that compares userGuess and   #
     # userSecretNumber. The code should:                        #
@@ -79,12 +79,19 @@ def evaluateAnswer( userGuess, userSecretNumber ):
 #       True, we'll show the right answer on the screen
 #       False, we won't show the right answer on the screen
 def playGame( showAnswer ):
-    print('Hello there, think of a number')
-    generateNumber = int(input())
-    print('how many guesses would you like?')
+    print('Hello there')#BRIAN: changed. #PROF ALFARO: don't ask the user to think of a number yet, first do what it says on the intsructions. Greet them, and ask them specifically what it says in the TO DO below.
 
-generateNumber = theNumber
-playGame()
+    print('Think of 1 to a number of your choice')
+    apple = int(input()) #PROF ALFARO: generateNumber is a function, so it can't be on the left side of an equal sign. The left sign of an equal sign is for a variable name that gets the result of the right side fo the equal sign. 
+    print('how many guesses would you like?')
+    totalGuesses = int(input())
+    
+
+#PROF ALFARO: indentation matters in Python - lines 87 and 88 should be indented as they are within the playGame function
+    theNumber = generateNumber(apple)
+        
+        #BRIAN: changed # PROF ALFARO: same thing here, think back to what an equal sign means and how to read it. 
+    print( 'Guess from  1 to ' + str(apple)+ '.')
 
     # TO DO: ####################################################
     # Write code in this function that                          #
